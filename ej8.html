@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .act{
+            display: block;
+        }
+        .des{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="ant">ANTERIOR</button>
+
+    <div>
+        <img src="./img/f1.png" alt="" class="des">
+        <img src="./img/f2.png" alt="" class="act">
+        <img src="./img/f3.png" alt="" class="des">
+    </div>
+    
+    <button class="seg">SIGUIENTE</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(".ant").on("click",function () {
+            
+            if ($("img:nth-child(1)").hasClass("act") ){
+                $(".act").removeClass("act").addClass("des");
+                $("img:nth-child(3)").removeClass("des").addClass("act");
+            }else{
+                $(".act").removeClass("act").addClass("des").prev().removeClass("des").addClass("act");
+            }
+
+        })
+        $(".seg").on("click", function () {
+            if ($("img:nth-child(3)").hasClass("act")) {
+                $(".act").removeClass("act").addClass("des");
+                $("img:nth-child(1)").removeClass("des").addClass("act");
+            }else{
+                $(".act").removeClass("act").addClass("des").next().removeClass("des").addClass("act");
+            }
+            
+        })
+    </script>
+</body>
+</html>

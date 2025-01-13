@@ -6,19 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <h2>
+            polo
+        </h2>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        const num = $("<p>0</p>");
-        $("body").append(num);
-        const boton = $("<button>AUMENTAR</button>");
-        $("body").append(boton);
-
-        var x = 0;
-
-        boton.on("click", function () {
-            
-            num.html(x+1);
-            x++;
+        $("div").mouseover( function () {
+            $("h2").text("pala");
+        })
+        $("div").mouseleave(function () {
+            $("h2").text("polo");
         })
     </script>
 </body>

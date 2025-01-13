@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            padding: 10px;
+            list-style: none;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+
+    <button>AÑADIR</button>
+    <ul>
+
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+
+            var texto = $("input").val(); 
+            if (texto) { 
+                $("ul").append("<li>" + texto + "</li>");
+                $("input").val(""); 
+            } else {
+                alert("Por favor, escribe algo en el campo de texto.");
+            }
+
+            })
+            $("ul").on("click", "li", function () {
+                $(this).remove();
+            })
+        })
+        
+    </script>
+</body>
+</html>

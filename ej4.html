@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+
+    <button>AÑADIR</button>
+    <ul>
+
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("button").on("click", function () {
+
+            var texto = $("input").val(); 
+            if (texto) { 
+                $("ul").append("<li>" + texto + "</li>");
+                $("input").val(""); 
+            } else {
+                alert("Por favor, escribe algo en el campo de texto.");
+            }
+
+        })
+    </script>
+</body>
+
+</html>

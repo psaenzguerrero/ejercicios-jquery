@@ -6,19 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <img src="./img/f1.png" alt="">
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        const num = $("<p>0</p>");
-        $("body").append(num);
-        const boton = $("<button>AUMENTAR</button>");
-        $("body").append(boton);
-
-        var x = 0;
-
-        boton.on("click", function () {
-            
-            num.html(x+1);
-            x++;
+        $("img").on("click", function () {
+            $("img").attr("src","./img/f2.png");
         })
     </script>
 </body>
