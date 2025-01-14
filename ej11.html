@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+    <div>
+        <h2>Hola</h2>
+    </div>
+    <div>
+        <h2>hola2</h2>
+    </div>
+    <div>
+        <h2>HOLA3</h2>
+    </div>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("div:first-child").hide();
+            $("div:nth-child(3)").hide();
+
+            $("button:nth-child(4)").on("click",function () {
+                $("div:first-child").show();
+                $("div:first-child").siblings("div").hide();
+            })
+            $("button:nth-child(5)").on("click",function () {
+                $("div:nth-child(2)").show();
+                $("div:nth-child(2)").siblings("div").hide();
+            })
+            $("button:nth-child(6)").on("click",function () {
+                $("div:nth-child(3)").show();
+                $("div:nth-child(3)").siblings("div").hide();
+            })
+        })
+    </script>
+</body>
+</html>

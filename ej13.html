@@ -6,19 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <p></p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        const num = $("<p>0</p>");
-        $("body").append(num);
-        const boton = $("<button>AUMENTAR</button>");
-        $("body").append(boton);
-
-        var x = 0;
-
-        boton.on("click", function () {
-            num.html(x+1);
-            x++;
-        })
+        const time = Date.now();
+        $("p").text(time);
     </script>
 </body>
 </html>

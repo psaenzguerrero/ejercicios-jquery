@@ -6,18 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <h2>NOTIFICACION</h2>
+        <button>X</button>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        const num = $("<p>0</p>");
-        $("body").append(num);
-        const boton = $("<button>AUMENTAR</button>");
-        $("body").append(boton);
+        $("div").hide();
+        $(function () {
+            $("div").show(1000);
 
-        var x = 0;
-
-        boton.on("click", function () {
-            num.html(x+1);
-            x++;
+            $("button").on("click",function () {
+                $("div").hide();
+            })
         })
     </script>
 </body>

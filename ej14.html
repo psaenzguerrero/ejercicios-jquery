@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+       
+    </style>
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        const num = $("<p>0</p>");
-        $("body").append(num);
+        const caja = $("<div>H</div>");
+        $(caja).css("width","0%");
+        $(caja).css("background-color","black");
+        $(caja).css("color","transparent");
         const boton = $("<button>AUMENTAR</button>");
+        $("body").append(caja);
         $("body").append(boton);
-
-        var x = 0;
-
-        boton.on("click", function () {
-            num.html(x+1);
-            x++;
+        var num = 1 ;
+        $(boton).on("click",function () {
+            num++;
+            $(caja).css("width",num+"%");
         })
     </script>
 </body>
