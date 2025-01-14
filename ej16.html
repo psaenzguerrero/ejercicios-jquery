@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text">
+        <input type="text" id="searchInput" placeholder="Buscar...">
     </form>
     <ul>
         <li>12</li>
@@ -20,15 +20,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-            $("li").css("list-style","none");
-            $("input").on("input",function (e) {
-                if ($(e.target).val() == $("li").text()) {
-                    $("li").show();
-                }else{
-                    $("li").hide();
-                }
-            })
-        })
+            // Establecer el estilo para los elementos <li>
+            $("li").css("list-style", "none");
+            
+            // Usar el evento 'input' para detectar cambios en el campo de búsqueda
+            $("#searchInput").on("input", function () {
+                var searchTerm = $(this).val().toLowerCase(); // Obtener el valor del campo y pasarlo a minúsculas
+
+                // Iterar sobre cada <li> en la lista
+                $("ul li").each(function () {
+                    var listItemText = $(this).text().toLowerCase(); // Obtener el texto de cada <li> y convertirlo a minúsculas
+                    
+                    // Mostrar u ocultar el <li> según si contiene el término de búsqueda
+                    if (listItemText.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
