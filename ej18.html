@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsualización de Imagen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #preview {
+            margin-top: 20px;
+            display: none;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de Selección de Imagen</h2>
+    <form id="imageForm" action="" method="post">
+        <label for="imageInput">Selecciona una imagen:</label>
+        <input type="file" id="imageInput" name="imageInput" accept="image/*">
+        
+        <div id="previewContainer">
+            <img id="preview" src="" alt="Vista previa de la imagen">
+        </div>
+
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            // Cuando el usuario seleccione un archivo de imagen
+            $('#imageInput').on('change', function(event) {
+                var file = event.target.files[0];  // Obtener el archivo seleccionado
+                if (file) {
+                    var reader = new FileReader();
+
+                    // Cuando el archivo haya sido leído, se mostrará la previsualización
+                    reader.onload = function(e) {
+                        $('#preview').attr('src', e.target.result);  // Establecer la URL de la imagen en el <img> de vista previa
+                        $('#preview').show();  // Mostrar la imagen
+                    };
+
+                    // Leer el archivo como URL de datos (base64)
+                    reader.readAsDataURL(file);
+                } else {
+                    $('#preview').hide();  // Ocultar la imagen si no hay archivo
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
