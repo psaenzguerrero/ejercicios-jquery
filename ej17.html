@@ -6,9 +6,34 @@
     <title>Document</title>
 </head>
 <body>
+    <button>Claro</button>
+    <button>Oscuro</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi magni eos a ipsam. Veniam distinctio eligendi sapiente repellendus inventore? Amet repudiandae assumenda consectetur aliquid odio omnis excepturi molestias dicta sit?</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        
+        $(function () {
+            $("button:nth-child(1)").hide();
+
+            $("button:nth-child(1)").css("background-color", "white");
+            $("button:nth-child(1)").css("color", "black");
+
+            $("button:nth-child(2)").css("background-color", "black");
+            $("button:nth-child(2)").css("color", "white");
+
+
+            $("button:nth-child(2)").on("click",function () {
+                $("button:nth-child(1)").show();
+                $("body").css("background-color", "black");
+                $("body").css("color", "white");
+                $("button:nth-child(2)").hide();
+            })
+            $("button:nth-child(1)").on("click",function () {
+                $("button:nth-child(2)").show();
+                $("body").css("background-color", "white");
+                $("body").css("color", "black");
+                $("button:nth-child(1)").hide();
+            })
+        })
     </script>
 </body>
 </html>
