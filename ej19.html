@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        const boton = $("<button>AÑADIR</button>");
+        $("body").append(boton);    
+
+        $(function () {
+            boton.on("click",function () {
+                $("body").append("<p>parrafo</p>");
+            })
+        })
+    </script>
 </body>
 </html>

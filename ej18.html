@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsualización de Imagen</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         #preview {
             margin-top: 20px;
@@ -30,9 +29,9 @@
         <br><br>
         <button type="submit">Enviar</button>
     </form>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(function() {
             // Cuando el usuario seleccione un archivo de imagen
             $('#imageInput').on('change', function(event) {
                 var file = event.target.files[0];  // Obtener el archivo seleccionado
