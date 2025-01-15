@@ -89,10 +89,22 @@
             $(".prev").on("click",function () {
                 indiceActual--;
                 mover();
-            })
-            
-            
+            })    
         });
+        var ul =$("<ul>");
+            $("body").append(ul);
+        var url ="https://dummyjson.com/products";
+        $.ajax({
+            type: "GET",
+            url,
+            success:function(respuesta){
+                $(respuesta.products).each(function (i,producto) {
+                    console.log(producto.title);
+                    ul.append("<li>"+producto.title+"</li>");
+                })
+            }
+        })
+        
     </script>
 </body>
 
