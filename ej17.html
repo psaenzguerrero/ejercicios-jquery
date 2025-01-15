@@ -4,34 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .oscuro{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <button>Claro</button>
+    <!-- <button>Claro</button> -->
     <button>Oscuro</button>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi magni eos a ipsam. Veniam distinctio eligendi sapiente repellendus inventore? Amet repudiandae assumenda consectetur aliquid odio omnis excepturi molestias dicta sit?</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-            $("button:nth-child(1)").hide();
+            // $("button:nth-child(1)").hide();
 
-            $("button:nth-child(1)").css("background-color", "white");
-            $("button:nth-child(1)").css("color", "black");
+            // $("button:nth-child(1)").css("background-color", "white");
+            // $("button:nth-child(1)").css("color", "black");
 
-            $("button:nth-child(2)").css("background-color", "black");
-            $("button:nth-child(2)").css("color", "white");
+            // $("button:nth-child(2)").css("background-color", "black");
+            // $("button:nth-child(2)").css("color", "white");
 
 
-            $("button:nth-child(2)").on("click",function () {
-                $("button:nth-child(1)").show();
-                $("body").css("background-color", "black");
-                $("body").css("color", "white");
-                $("button:nth-child(2)").hide();
-            })
-            $("button:nth-child(1)").on("click",function () {
-                $("button:nth-child(2)").show();
-                $("body").css("background-color", "white");
-                $("body").css("color", "black");
-                $("button:nth-child(1)").hide();
+            // $("button:nth-child(2)").on("click",function () {
+            //     $("button:nth-child(1)").show();
+            //     $("body").css("background-color", "black");
+            //     $("body").css("color", "white");
+            //     $("button:nth-child(2)").hide();
+            // })
+            // $("button:nth-child(1)").on("click",function () {
+            //     $("button:nth-child(2)").show();
+            //     $("body").css("background-color", "white");
+            //     $("body").css("color", "black");
+            //     $("button:nth-child(1)").hide();
+            // })
+            $("button").on("click", function () {
+                $("body").toggleClass("oscuro");
+                if ($("body").hasClass("oscuro")) {
+                    $("button").text("claro");
+                }else{
+                    $("button").text("oscuro");
+                }
+
             })
         })
     </script>
